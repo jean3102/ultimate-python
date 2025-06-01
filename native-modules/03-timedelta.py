@@ -1,15 +1,22 @@
 from datetime import datetime, timedelta
 
-date1 = datetime(2025, 1, 1)
-date2 = datetime(2025, 2, 1)
+# Define two datetime objects
+start_date = datetime(2025, 1, 1)
+end_date = datetime(2025, 2, 1)
 
+# Add 3 weeks to a date
+three_weeks_later = start_date + timedelta(weeks=3)
+print(f"Three weeks after {start_date.date()}: {three_weeks_later.date()}")
 
-date3 = datetime(2025, 1, 1) + timedelta(weeks=3)
-date4 = datetime(2025, 1, 1)
-print(f"date3: {date3}")
-print(f"date4: {date4}")
+# Show original date again for comparison
+print(f"Original start date: {start_date.date()}")
 
-delta = date1 - date2
-print(f"secound: {delta.seconds}")
-print(f"microseconds: {delta.microseconds}")
-print(f"microseconds: {delta.total_seconds()}")
+# Calculate the difference between two dates
+delta = start_date - end_date
+
+# Display the difference components
+print(f"Timedelta (start - end): {delta}")
+# Seconds part of leftover time only
+print(f"Seconds (within the day): {delta.seconds}")
+print(f"Microseconds: {delta.microseconds}")
+print(f"Total seconds (including negative days): {delta.total_seconds()}")
